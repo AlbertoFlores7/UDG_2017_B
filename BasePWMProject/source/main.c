@@ -37,7 +37,7 @@
  * Definitions
  ******************************************************************************/
 #define BOARD_TPM_BASEADDR TPM2
-#define BOARD_TPM_CHANNEL 1U
+#define BOARD_TPM_CHANNEL 0U
 
 /* Interrupt to enable and flag to read; depends on the TPM channel used */
 #define TPM_CHANNEL_INTERRUPT_ENABLE kTPM_Chnl1InterruptEnable
@@ -91,6 +91,7 @@ int main(void)
     CLOCK_SetTpmClock(1U);
 
     /* Print a note to terminal */
+    PRINTF("\r\nOmar Sevilla SW Embedded Mentors Continental Automotive\r\n");
     PRINTF("\r\nTPM example to output center-aligned PWM signal\r\n");
     PRINTF("\r\nIf an LED is connected to the TPM pin, you will see a change in LED brightness if you enter different values");
     PRINTF("\r\nIf no LED is connected to the TPM pin, then probe the signal using an oscilloscope");
