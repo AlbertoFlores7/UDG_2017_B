@@ -37,7 +37,7 @@
  * Definitions
  ******************************************************************************/
 #define BOARD_TPM_BASEADDR TPM2
-#define BOARD_TPM_CHANNEL 1U
+#define BOARD_TPM_CHANNEL 0U
 
 /* Interrupt to enable and flag to read; depends on the TPM channel used */
 #define TPM_CHANNEL_INTERRUPT_ENABLE kTPM_Chnl1InterruptEnable
