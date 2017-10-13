@@ -106,7 +106,7 @@ int main(void)
     {
         do
         {
-            PRINTF("\r\n Enter a value to update the Duty cycle:\r\n");
+            PRINTF("\r\n PLEASE Enter a value to update the Duty cycle:\r\n");
             PRINTF("Note: The range of value is 0 to 9.\r\n");
             PRINTF("For example: If enter '9', the duty cycle will be set to 90 percent.\r\n");
             PRINTF("Value:");
