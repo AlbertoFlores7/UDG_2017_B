@@ -111,10 +111,10 @@ int main(void)
             PRINTF("Note: The range of value is 0 to 9.\r\n");
             PRINTF("For example: If enter '9', the duty cycle will be set to 90 percent.\r\n");
             PRINTF("Value:");
-            getCharValue = GETCHAR() - 0x30U;
+            SCANF("%d",&getCharValue);
             PRINTF("%d", getCharValue);
             PRINTF("\r\n");
-        } while (getCharValue > 9U);
+        } while (getCharValue > 10U);
 
         updatedDutycycle = getCharValue * 10U;
 
