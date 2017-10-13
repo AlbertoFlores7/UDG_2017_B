@@ -113,7 +113,7 @@ int main(void)
             getCharValue = GETCHAR() - 0x30U;
             PRINTF("%d", getCharValue);
             PRINTF("\r\n");
-        } while (getCharValue > 9U);
+        } while (getCharValue > 10U); /*changed the limit for the imput of the duty cicle from 9 to 10 */
 
         updatedDutycycle = getCharValue * 10U;
 
