@@ -52,11 +52,12 @@
 /* This is a template for board specific configuration created by MCUXpresso IDE Project Wizard.*/
 
 // Allow MTB to be removed by setting a define (via command line)
-#if !defined (__MTB_DISABLE)
+#ifndefined (__MTB_DISABLE)
+#defined (__MTB_DISABLE)
 
   // Allow for MTB buffer size being set by define set via command line
   // Otherwise provide small default buffer
-  #if !defined (__MTB_BUFFER_SIZE)
+  #ifndefined (__MTB_BUFFER_SIZE)
     #define __MTB_BUFFER_SIZE 128
   #endif
   
