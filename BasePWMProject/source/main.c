@@ -50,6 +50,10 @@
 /* Get source clock for TPM driver */
 #define TPM_SOURCE_CLOCK CLOCK_GetFreq(kCLOCK_PllFllSelClk)
 
+#define CHAR_VALUE_COND 9U
+#define CHAR_VALUE_UPPER 10u
+#define GET_CHAR_OFFSET 0x30U
+
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
@@ -111,12 +115,12 @@ int main(void)
             PRINTF("Note: The range of value is 0 to 9.\r\n");
             PRINTF("For example: If enter '5', the duty cycle will be set to 50 percent.\r\n");
             PRINTF("Value:");
-            getCharValue = GETCHAR() - 0x30U;
+            getCharValue = GETCHAR() - GET_CHAR_OFFSET;
             PRINTF("%d", getCharValue);
             PRINTF("\r\n");
-        } while (getCharValue > 9U);
+        } while (getCharValue > CHARVALUE_COND);
 
-        updatedDutycycle = getCharValue * 10U;
+        updatedDutycycle = getCharValue * CHAR_VALUE_UPPER;
 
         /* Disable channel output before updating the dutycycle */
         TPM_UpdateChnlEdgeLevelSelect(BOARD_TPM_BASEADDR, (tpm_chnl_t)BOARD_TPM_CHANNEL, 0U);
