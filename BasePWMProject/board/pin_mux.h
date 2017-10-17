@@ -35,7 +35,11 @@
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
-
+#define PIN1_IDX                         1u   /*!< Pin number for pin 1 in a port */
+#define PIN2_IDX                         2u   /*!< Pin number for pin 2 in a port */
+#define PIN19_IDX                       19u   /*!< Pin number for pin 19 in a port */
+#define SOPT5_UART0RXSRC_UART_RX      0x00u   /*!< UART0 receive data source select: UART0_RX pin */
+#define SOPT5_UART0TXSRC_UART_TX      0x00u   /*!< UART0 transmit data source select: UART0_TX pin */
 /*! @brief Direction type  */
 typedef enum _pin_mux_direction
 {
