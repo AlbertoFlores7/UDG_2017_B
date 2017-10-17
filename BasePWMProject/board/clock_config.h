@@ -37,6 +37,12 @@
  * Definitions
  ******************************************************************************/
 #define BOARD_XTAL0_CLK_HZ                          8000000U  /*!< Board xtal0 frequency in Hz */
+#define MCG_PLL_DISABLE                                   0U  /*!< MCGPLLCLK disabled */
+#define OSC_CAP0P                                         0U  /*!< Oscillator 0pF capacitor load */
+#define OSC_ER_CLK_DISABLE                                0U  /*!< Disable external reference clock */
+#define SIM_OSC32KSEL_LPO_CLK                             3U  /*!< OSC32KSEL select: LPO clock */
+#define SIM_PLLFLLSEL_MCGFLLCLK_CLK                       0U  /*!< PLLFLL select: MCGFLLCLK clock */
+#define SIM_PLLFLLSEL_MCGPLLCLK_CLK                       1U  /*!< PLLFLL select: MCGPLLCLK clock */
 
 /*******************************************************************************
  ********************** Configuration BOARD_BootClockRUN ***********************
