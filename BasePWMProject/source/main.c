@@ -62,7 +62,7 @@ void delay(void);
  * Variables
  ******************************************************************************/
 volatile bool brightnessUp = true; /* Indicate LED is brighter or dimmer */
-volatile uint8_t updatedDutycycle = 10U;
+volatile uint8_t updatedDutycycle = 0;
 volatile uint8_t getCharValue = 0U;
 
 /*******************************************************************************
@@ -105,18 +105,7 @@ int main(void)
 
     while (1)
     {
-        do
-        {
-            PRINTF("\r\nPlease enter a value to update the Duty cycle:\r\n");
-            PRINTF("Note: The range of value is 0 to 9.\r\n");
-            PRINTF("For example: If enter '5', the duty cycle will be set to 50 percent.\r\n");
-            PRINTF("Value:");
-            getCharValue = GETCHAR() - 0x30U;
-            PRINTF("%d", getCharValue);
-            PRINTF("\r\n");
-        } while (getCharValue > 9U);
 
-        updatedDutycycle = getCharValue * 10U;
 
         /* Disable channel output before updating the dutycycle */
         TPM_UpdateChnlEdgeLevelSelect(BOARD_TPM_BASEADDR, (tpm_chnl_t)BOARD_TPM_CHANNEL, 0U);
@@ -127,6 +116,8 @@ int main(void)
 
         /* Start channel output with updated dutycycle */
         TPM_UpdateChnlEdgeLevelSelect(BOARD_TPM_BASEADDR, (tpm_chnl_t)BOARD_TPM_CHANNEL, pwmLevel);
+
+        updatedDutycycle++;
 
         PRINTF("The duty cycle was successfully updated!\r\n");
     }
