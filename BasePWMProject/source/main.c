@@ -117,7 +117,7 @@ int main(void)
         /* Start channel output with updated dutycycle */
         TPM_UpdateChnlEdgeLevelSelect(BOARD_TPM_BASEADDR, (tpm_chnl_t)BOARD_TPM_CHANNEL, pwmLevel);
 
-        updatedDutycycle++;
+        updatedDutycycle = updatedDutycycle > 100 ? 0 : updatedDutycycle + 1;
 
         PRINTF("The duty cycle was successfully updated!\r\n");
     }
