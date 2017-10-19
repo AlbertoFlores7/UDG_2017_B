@@ -1,1 +1,11 @@
-Issue Template under construction
+/* Issue Type */
+
+/* Issue Descritpiton */
+
+/* Pre Analysis */
+
+/* Root Cause */
+
+/* Proposed Solution */
+
+/* SW Impacted */
