@@ -31,7 +31,6 @@
 #include "fsl_debug_console.h"
 #include "board.h"
 #include "fsl_tpm.h"
-
 #include "pin_mux.h"
 /*******************************************************************************
  * Definitions
@@ -126,8 +125,7 @@ int main(void)
         TPM_UpdateChnlEdgeLevelSelect(BOARD_TPM_BASEADDR, (tpm_chnl_t)BOARD_TPM_CHANNEL, 0U);
 
         /* Update PWM duty cycle */
-        TPM_UpdatePwmDutycycle(BOARD_TPM_BASEADDR, (tpm_chnl_t)BOARD_TPM_CHANNEL, kTPM_CenterAlignedPwm,
-                               updatedDutycycle);
+        TPM_UpdatePwmDutycycle(BOARD_TPM_BASEADDR, (tpm_chnl_t)BOARD_TPM_CHANNEL, kTPM_CenterAlignedPwm,updatedDutycycle);
 
         /* Start channel output with updated dutycycle */
         TPM_UpdateChnlEdgeLevelSelect(BOARD_TPM_BASEADDR, (tpm_chnl_t)BOARD_TPM_CHANNEL, pwmLevel);
